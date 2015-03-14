@@ -16,6 +16,15 @@ class ThreadPool:
 			t = threading.Thread(target=worker)
 			threads.append(t)
 			t.start()
+			return True
 
 	def worker():
-		pass
+		while job_q.unfinished_jobs:
+			exec_function, args = job_q.get()
+			exec_function(args)
+			job_q.task_done()
+		return True
+
+	def add_job(exec_function, args):
+		job_q.put((exec_function, args))
+		return True
