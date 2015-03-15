@@ -3,44 +3,44 @@ import threading
 
 
 class ThreadPool:
-    nhreads = 0
-    q_size = 0
-    job_q = Queue.Queue()
-    threads = []
-    total_jobs = 0
+    _nhreads = 0
+    _q_size = 0
+    _job_q = Queue.Queue()
+    _total_jobs = 0
+    _threads = []
 
     def __init__(self, nthreads=10, q_size=0):
-        self.nthreads = nthreads
-        self.q_size = q_size
+        self._nthreads = nthreads
+        self._q_size = q_size
 
     def start(self):
-        for i in range(self.nthreads):
+        for i in range(self._nthreads):
             t = threading.Thread(target=self.worker)
-            self.threads.append(t)
+            self._threads.append(t)
             t.start()
         return True
 
     def worker(self):
-        while self.job_q.qsize():
-            exec_function, args = self.job_q.get()
+        while self._job_q.qsize():
+            exec_function, args = self._job_q.get()
             if args:
                 exec_function(args)
             else:
                 exec_function()
-            self.job_q.task_done()
+            self._job_q.task_done()
         return True
 
     def add_job(self, exec_function, args=None):
-        self.job_q.put((exec_function, args))
-        self.total_jobs += 1
+        self._job_q.put((exec_function, args))
+        self._total_jobs += 1
         return True
 
     def finish(self):
-        self.job_q.join()
+        self._job_q.join()
         return True
 
     def unfinished_tasks(self):
-        return self.job_q.qsize()
+        return self._job_q.qsize()
 
     def finished_tasks(self):
-        return self.total_jobs - self.job_q.qsize()
+        return self._total_jobs - self._job_q.qsize()
