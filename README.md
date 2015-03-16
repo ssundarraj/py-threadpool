@@ -4,7 +4,7 @@ Thread pool library for Humans.
 ## Installation
 
 #### Using `pip`
-`pip install py_threadpool` (Not supported yet)
+`pip install pyThreadpool` (Not supported yet)
 
 #### From source
 
@@ -17,14 +17,14 @@ Thread pool library for Humans.
 Basic usage is shown here.
 
 ```py
-import py_threadpool as ThreadPool
+import pyThreadpool
 import requests
 
 def printer():
     requests.get('http://google.com')
     print "Done"
 
-t = ThreadPool.ThreadPool()
+t = pyThreadPool.ThreadPool()
 for i in range(10):
     t.add_job(printer, None)
 t.start()
