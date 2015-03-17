@@ -2,7 +2,7 @@ import Queue
 import threading
 
 
-class ThreadPool:
+class Threadpool:
     _nhreads = 0
     _q_size = 0
     _job_q = Queue.Queue()
