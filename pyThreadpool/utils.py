@@ -22,16 +22,13 @@ class Threadpool:
 
     def worker(self):
         while self._job_q.qsize():
-            exec_function, args = self._job_q.get()
-            if args:
-                exec_function(args)
-            else:
-                exec_function()
+            job = self._job_q.get()
+            job.execute()
             self._job_q.task_done()
         return True
 
-    def add_job(self, exec_function, args=None):
-        self._job_q.put((exec_function, args))
+    def add_job(ThreadJob):
+        self._job_q.put(ThreadJob)
         self._total_jobs += 1
         return True
 
@@ -45,6 +42,7 @@ class Threadpool:
     def finished_tasks(self):
         return self._total_jobs - self._job_q.qsize()
 
+
 class ThreadJob:
     exec_function = None
     exeption = False
@@ -52,8 +50,10 @@ class ThreadJob:
     args = []
     kwargs = {}
 
-
-    def __init__(exec_function, args, kwargs):
+    def __init__(self, exec_function, args, kwargs):
         self.exec_function = exec_function
         self.args = args or []
         self.kwargs = kwargs or {}
+
+    def execute(self):
+        pass  # Todo
