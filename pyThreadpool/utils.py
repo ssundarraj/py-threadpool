@@ -44,3 +44,16 @@ class Threadpool:
 
     def finished_tasks(self):
         return self._total_jobs - self._job_q.qsize()
+
+class ThreadJob:
+    exec_function = None
+    exeption = False
+    callback = None  # Yet to be done
+    args = []
+    kwargs = {}
+
+
+    def __init__(exec_function, args, kwargs):
+        self.exec_function = exec_function
+        self.args = args or []
+        self.kwargs = kwargs or {}
