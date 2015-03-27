@@ -36,3 +36,8 @@ t.finish()
 ## Contribute
 
 If you want to add features, or improve anything feel free to send a pull request. If you have any issues, open an issue.
+
+## Todo
+
+* Putting results in `result_q` and handling the results
+* Handling exceptions in the function call
