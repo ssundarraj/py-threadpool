@@ -7,7 +7,8 @@ class thread_job:
 
     def __init__(self, exec_function, args, kwds):
         self.exec_function = exec_function
-        if type(args) == str:
+        if type(args) == str or args == 0:
+            self.args = (args,)
             self.args = (args,)
         else:
             self.args = (args) or []
