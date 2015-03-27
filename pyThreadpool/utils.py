@@ -50,7 +50,7 @@ class ThreadJob:
     exeption = False
     callback = None  # Yet to be done
     args = []
-    kwds = {}
+    kwargs = {}
 
     def __init__(self, exec_function, args, kwds):
         self.exec_function = exec_function
@@ -58,7 +58,7 @@ class ThreadJob:
             self.args = (args,)
         else:
             self.args = (args) or []
-        self.kwds = kwds or {}
+        self.kwargs = kwds or {}
 
     def execute(self):
-        self.exec_function(*self.args)
+        self.exec_function(*self.args, **self.kwargs)
