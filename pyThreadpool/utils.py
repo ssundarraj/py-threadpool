@@ -2,7 +2,7 @@ import Queue
 import threading
 
 
-class Threadpool:
+class threadpool:
     _nhreads = 0
     _q_size = 0
     _job_q = Queue.Queue()
@@ -45,7 +45,7 @@ class Threadpool:
         return self._total_jobs - self._job_q.qsize()
 
 
-class ThreadJob:
+class thread_job:
     exec_function = None
     exeption = False
     callback = None  # Yet to be done
@@ -62,3 +62,7 @@ class ThreadJob:
 
     def execute(self):
         self.exec_function(*self.args, **self.kwargs)
+
+
+class worker_thread:
+    pass

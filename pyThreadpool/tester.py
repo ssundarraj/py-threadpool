@@ -7,9 +7,9 @@ def printer(x, test=None):
     print test
     print "Done"
 
-t = Threadpool()
+t = threadpool()
 for i in range(100):
-    j = ThreadJob(printer, ('formal'), {'test':'keyword'})
+    j = thread_job(printer, ('formal'), {'test':'keyword'})
     t.add_job(j)
 t.start()
 t.finish()
