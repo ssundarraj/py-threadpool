@@ -19,11 +19,14 @@ Basic usage is shown here.
 ```py
 import threadpool
 
+# Function to be executed.
 def printer(x, y, testx=None, testy=None):
     print x, y, testx, testy
     print "Done"
 
 t = threadpool.threadpool()
+
+# Adding the same function 100 times
 for i in range(100):
     args = ('formalx', 'formaly')
     kwargs = {'testx': 'keywordx', 'testy': 'keywordy'}
