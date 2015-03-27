@@ -4,6 +4,7 @@ class thread_job:
     callback = None  # Yet to be done
     args = []
     kwargs = {}
+    return_value = None
 
     def __init__(self, exec_function, args, kwds):
         self.exec_function = exec_function
@@ -15,4 +16,4 @@ class thread_job:
         self.kwargs = kwds or {}
 
     def execute(self):
-        self.exec_function(*self.args, **self.kwargs)
+        return self.exec_function(*self.args, **self.kwargs)

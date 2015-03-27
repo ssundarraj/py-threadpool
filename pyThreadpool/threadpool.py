@@ -8,6 +8,7 @@ class threadpool:
     _nthreads = 0
     _q_size = 0
     _job_q = Queue.Queue()
+    _result_q = Queue.Queue()
     _total_jobs = 0
     _threads = []
 
@@ -16,7 +17,7 @@ class threadpool:
 
     def start(self):
         for i in range(self._nthreads):
-            t = worker_thread(self._job_q)
+            t = worker_thread(self._job_q, self._result_q)
             self._threads.append(t)
             t.start()
         return True
