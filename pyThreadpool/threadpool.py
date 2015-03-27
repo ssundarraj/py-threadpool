@@ -5,7 +5,7 @@ from thread_job import thread_job
 
 
 class threadpool:
-    _nhreads = 0
+    _nthreads = 0
     _q_size = 0
     _job_q = Queue.Queue()
     _total_jobs = 0
