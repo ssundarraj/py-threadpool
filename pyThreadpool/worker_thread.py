@@ -1,6 +1,7 @@
 import threading
 import Queue
 
+
 class worker_thread(threading.Thread):
 
     def __init__(self, job_q, result_q=None):
