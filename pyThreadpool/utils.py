@@ -9,9 +9,8 @@ class Threadpool:
     _total_jobs = 0
     _threads = []
 
-    def __init__(self, nthreads=10, q_size=0):
+    def __init__(self, nthreads=10):
         self._nthreads = nthreads
-        self._q_size = q_size
 
     def start(self):
         for i in range(self._nthreads):
@@ -22,13 +21,16 @@ class Threadpool:
 
     def worker(self):
         while self._job_q.qsize():
-            job = self._job_q.get()
+            try:
+                job = self._job_q.get(None)
+            except Queue.Empty:  # Exit the worker if Q empty
+                return True
             job.execute()
             self._job_q.task_done()
         return True
 
-    def add_job(ThreadJob):
-        self._job_q.put(ThreadJob)
+    def add_job(self, job):
+        self._job_q.put(job)
         self._total_jobs += 1
         return True
 
@@ -48,12 +50,15 @@ class ThreadJob:
     exeption = False
     callback = None  # Yet to be done
     args = []
-    kwargs = {}
+    kwds = {}
 
-    def __init__(self, exec_function, args, kwargs):
+    def __init__(self, exec_function, args, kwds):
         self.exec_function = exec_function
-        self.args = args or []
-        self.kwargs = kwargs or {}
+        if type(args) == str:
+            self.args = (args,)
+        else:
+            self.args = (args) or []
+        self.kwds = kwds or {}
 
     def execute(self):
-        pass  # Todo
+        self.exec_function(*self.args)
