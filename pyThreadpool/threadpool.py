@@ -21,16 +21,6 @@ class threadpool:
             t.start()
         return True
 
-    def worker(self):
-        while self._job_q.qsize():
-            try:
-                job = self._job_q.get(None)
-            except Queue.Empty:  # Exit the worker if Q empty
-                return True
-            job.execute()
-            self._job_q.task_done()
-        return True
-
     def add_job(self, job):
         self._job_q.put(job)
         self._total_jobs += 1
