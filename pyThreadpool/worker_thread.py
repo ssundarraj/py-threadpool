@@ -15,7 +15,7 @@ class worker_thread(threading.Thread):
                 job = self._job_q.get(None)
             except Queue.Empty:  # Exit the worker if Q empty
                 return False
-            job.return_value = job.execute()
+            job.execute()
             self._result_q.put(job)
             self._job_q.task_done()
         return True

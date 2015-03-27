@@ -1,6 +1,6 @@
 class thread_job:
     exec_function = None
-    exeption = False
+    exception = False
     callback = None  # Yet to be done
     args = []
     kwargs = {}
@@ -16,4 +16,7 @@ class thread_job:
         self.kwargs = kwds or {}
 
     def execute(self):
-        return self.exec_function(*self.args, **self.kwargs)
+        try:
+            self.return_value = self.exec_function(*self.args, **self.kwargs)
+        except Exception as e:
+            self.exception = e
