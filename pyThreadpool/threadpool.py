@@ -1,6 +1,6 @@
 import Queue
 import threading
-
+from worker_thread import worker_thread
 
 class threadpool:
     _nhreads = 0
@@ -43,40 +43,3 @@ class threadpool:
 
     def finished_tasks(self):
         return self._total_jobs - self._job_q.qsize()
-
-
-class thread_job:
-    exec_function = None
-    exeption = False
-    callback = None  # Yet to be done
-    args = []
-    kwargs = {}
-
-    def __init__(self, exec_function, args, kwds):
-        self.exec_function = exec_function
-        if type(args) == str:
-            self.args = (args,)
-        else:
-            self.args = (args) or []
-        self.kwargs = kwds or {}
-
-    def execute(self):
-        self.exec_function(*self.args, **self.kwargs)
-
-
-class worker_thread(threading.Thread):
-
-    def __init__(self, job_q, result_q=None):
-        super(worker_thread, self).__init__()
-        self._job_q = job_q
-        self._result_q = result_q
-
-    def run(self):
-        while self._job_q.qsize():
-            try:
-                job = self._job_q.get(None)
-            except Queue.Empty:  # Exit the worker if Q empty
-                return True
-            job.execute()
-            self._job_q.task_done()
-        return True
