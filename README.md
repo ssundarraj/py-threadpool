@@ -17,20 +17,20 @@ Thread pool library for Humans.
 Basic usage is shown here.
 
 ```py
-import threadpool
+import pyThreadpool
 
 # Function to be executed.
 def printer(x, y, testx=None, testy=None):
     print x, y, testx, testy
     print "Done"
 
-t = threadpool.threadpool()
+t = pyThreadpool.threadpool()
 
 # Adding the same function 100 times
 for i in range(100):
     args = ('formalx', 'formaly')
     kwargs = {'testx': 'keywordx', 'testy': 'keywordy'}
-    j = threadpool.thread_job(printer, args, kwargs)
+    j = pyThreadpool.thread_job(printer, args, kwargs)  # Create a thread_job object.
     t.add_job(j)
 t.start()
 t.finish()

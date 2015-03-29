@@ -4,7 +4,7 @@ import threadpool
 def printer(x, y, testx=None, testy=None):
     print x, y, testx, testy
     print "Done"
-    a={}
+    a = {}
     print a['b']
     return True
 
