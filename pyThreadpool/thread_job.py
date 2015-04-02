@@ -6,7 +6,7 @@ class thread_job:
     kwargs = {}
     return_value = None
 
-    def __init__(self, exec_function, args, kwds):
+    def __init__(self, exec_function, args=None, kwds=None):
         self.exec_function = exec_function
         if type(args) == str or args == 0:
             self.args = (args,)
