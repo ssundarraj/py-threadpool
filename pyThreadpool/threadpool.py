@@ -11,6 +11,7 @@ class threadpool:
     _result_q = Queue.Queue()
     _total_jobs = 0
     _threads = []
+    is_active = 0
 
     def __init__(self, nthreads=10):
         self._nthreads = nthreads
@@ -18,6 +19,7 @@ class threadpool:
     def start(self):
         for i in range(self._nthreads):
             t = worker_thread(self._job_q, self._result_q)
+            self.is_active = True
             self._threads.append(t)
             t.start()
         return True
@@ -29,6 +31,7 @@ class threadpool:
 
     def finish(self):
         self._job_q.join()
+        self.is_active = False
         return True
 
     def unfinished_tasks(self):
