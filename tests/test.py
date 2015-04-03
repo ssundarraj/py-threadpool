@@ -3,6 +3,7 @@ from nose.tools import eq_, ok_
 
 t = pyThreadpool.threadpool()
 
+
 def printer(x, y, testx=None, testy=None):
     print x, y, testx, testy
     # print "Done"
@@ -13,6 +14,7 @@ def printer(x, y, testx=None, testy=None):
     eq_(testx, 'keywordx')
     eq_(testy, 'keywordy')
     return True
+
 
 def test_intern():
     for i in range(100):
