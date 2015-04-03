@@ -15,6 +15,6 @@ for i in range(100):
     j = pyThreadpool.thread_job(printer, args, kwargs)
     t.add_job(j)
 t.start()
-print t.is_active
+print(t.is_active)
 t.finish()
-print t.is_active
+print(t.is_active)

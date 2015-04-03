@@ -1,5 +1,8 @@
 import threading
-import Queue
+try:
+    import Queue
+except ImportError:
+    import queue as Queue
 
 
 class worker_thread(threading.Thread):
