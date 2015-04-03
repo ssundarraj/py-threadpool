@@ -5,7 +5,7 @@ t = pyThreadpool.threadpool()
 
 
 def printer(x, y, testx=None, testy=None):
-    print x, y, testx, testy
+    print(x, y, testx, testy)
     # print "Done"
     a = {}
     # print a['b']
@@ -23,7 +23,7 @@ def test_intern():
         j = pyThreadpool.thread_job(printer, args, kwargs)
         t.add_job(j)
     t.start()
-    print t.is_active
+    print(t.is_active)
     t.finish()
 
 test_intern()
