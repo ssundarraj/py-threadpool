@@ -1,7 +1,7 @@
 import Queue
 import threading
-from worker_thread import worker_thread
-from thread_job import thread_job
+from .worker_thread import worker_thread
+from .thread_job import thread_job
 
 
 class threadpool:
