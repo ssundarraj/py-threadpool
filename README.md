@@ -1,6 +1,8 @@
 # py-threadpool
 Thread pool library for Humans.
 
+[![Build Status](https://travis-ci.org/sananth12/py-threadpool.svg)]
+
 ## Installation
 
 #### Using `pip`

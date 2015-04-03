@@ -1,5 +1,5 @@
 import threading
-import Queue
+import queue
 
 
 class worker_thread(threading.Thread):
@@ -13,7 +13,7 @@ class worker_thread(threading.Thread):
         while self._job_q.qsize():
             try:
                 job = self._job_q.get(None)
-            except Queue.Empty:  # Exit the worker if Q empty
+            except queue.Empty:  # Exit the worker if Q empty
                 return False
             job.execute()
             self._result_q.put(job)

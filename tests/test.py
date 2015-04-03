@@ -25,3 +25,5 @@ def test_intern():
     t.start()
     print t.is_active
     t.finish()
+
+test_intern()

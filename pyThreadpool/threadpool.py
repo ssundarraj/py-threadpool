@@ -1,14 +1,14 @@
-import Queue
+import queue
 import threading
-from worker_thread import worker_thread
-from thread_job import thread_job
+from .worker_thread import worker_thread
+from .thread_job import thread_job
 
 
 class threadpool:
     _nthreads = 0
     _q_size = 0
-    _job_q = Queue.Queue()
-    _result_q = Queue.Queue()
+    _job_q = queue.Queue()
+    _result_q = queue.Queue()
     _total_jobs = 0
     _threads = []
     is_active = 0
