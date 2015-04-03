@@ -1,5 +1,5 @@
 import Queue
-import threaing
+import threading
 from .worker_thread import worker_thread
 from .thread_job import thread_job
 
