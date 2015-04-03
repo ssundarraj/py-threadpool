@@ -8,6 +8,10 @@ Thread pool library for Humans.
 #### Using `pip`
 `pip install pyThreadpool` (Not supported yet)
 
+or to get the source via pip, use
+
+`pip install -e git+https://github.com/srirams6/py-threadpool.git#egg=pyThreadpool`
+
 #### From source
 
 * Clone from Github.
