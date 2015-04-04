@@ -1,7 +1,7 @@
 # py-threadpool
 Thread pool library for Humans.
 
-![Build Status](https://travis-ci.org/srirams6/py-threadpool.svg)
+[![Build Status](https://travis-ci.org/srirams6/py-threadpool.svg?branch=master)](https://travis-ci.org/srirams6/py-threadpool)
 [![Coverage Status](https://coveralls.io/repos/srirams6/py-threadpool/badge.svg?branch=coverage)](https://coveralls.io/r/srirams6/py-threadpool?branch=coverage)
 
 ## Installation
