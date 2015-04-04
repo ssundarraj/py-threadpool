@@ -8,15 +8,15 @@ except ImportError:
 
 
 class threadpool:
-    nthreads = 0
-    _q_size = 0
-    _job_q = Queue.Queue()
-    _result_q = Queue.Queue()
-    _total_jobs = 0
-    _threads = []
-    is_active = 0
 
     def __init__(self, nthreads=10):
+        self.nthreads = 0
+        self._q_size = 0
+        self._job_q = Queue.Queue()
+        self._result_q = Queue.Queue()
+        self._total_jobs = 0
+        self._threads = []
+        self.is_active = 0
         self.nthreads = nthreads
 
     def start(self):

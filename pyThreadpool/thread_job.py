@@ -1,12 +1,11 @@
 class thread_job:
-    exec_function = None
-    exception = False
-    callback = None  # Yet to be done
-    args = []
-    kwargs = {}
-    return_value = None
 
     def __init__(self, exec_function, args=None, kwds=None):
+        self.exception = False
+        self.callback = None  # Yet to be done
+        self.args = []
+        self.kwargs = {}
+        self.return_value = None
         self.exec_function = exec_function
         if type(args) == str or args == 0:
             self.args = (args,)
