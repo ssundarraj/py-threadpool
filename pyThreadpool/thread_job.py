@@ -10,7 +10,6 @@ class thread_job:
         self.exec_function = exec_function
         if type(args) == str or args == 0:
             self.args = (args,)
-            self.args = (args,)
         else:
             self.args = (args) or []
         self.kwargs = kwds or {}
