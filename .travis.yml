@@ -12,5 +12,7 @@ install:
 script:
   - nosetests
   - nosetests --with-coverage --cover-package=pyThreadpool
+after_success:
+  coveralls
 notifications:
   email: false
