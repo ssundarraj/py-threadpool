@@ -3,10 +3,7 @@ py-threadpool
 
 Thread pool library for Humans.
 
-.. figure:: https://travis-ci.org/srirams6/py-threadpool.svg
-   :alt: Build Status
-
-   Build Status
+|Build Status| |Coverage Status|
 
 Installation
 ------------
@@ -62,3 +59,7 @@ Todo
 
 -  Putting results in ``result_q`` and handling the results
 -  Handling exceptions in the function call
+
+.. |Build Status| image:: https://travis-ci.org/srirams6/py-threadpool.svg
+.. |Coverage Status| image:: https://coveralls.io/repos/srirams6/py-threadpool/badge.svg?branch=coverage
+   :target: https://coveralls.io/r/srirams6/py-threadpool?branch=coverage
