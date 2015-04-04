@@ -7,8 +7,10 @@ python:
 # command to install package
 install:
   - python setup.py install
+  - pip install coveralls
 # command to run tests
 script:
   - nosetests
+  - nosetests --with-coverage --cover-package=pyThreadpool
 notifications:
   email: false
