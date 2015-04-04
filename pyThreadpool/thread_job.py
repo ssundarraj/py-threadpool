@@ -1,4 +1,4 @@
-class thread_job:
+class thread_job(object):
 
     def __init__(self, exec_function, args=None, kwds=None):
         self.exception = False

@@ -7,7 +7,7 @@ except ImportError:
     import queue as Queue
 
 
-class threadpool:
+class threadpool(object):
 
     def __init__(self, nthreads=10):
         self.nthreads = 0
