@@ -6,10 +6,11 @@ except ImportError:
 setup(name='pyThreadpool',
       version='0.1',
       description='Threadpool library for humans.',
+      long_description=open('README.rst').read(),
       url='http://github.com/srirams6/py-threadpool',
       author='Sriram Sundarraj',
       author_email='sriram.s.1994@gmail.com',
-      license='GNU v3',
+      license=open('LICENSE').read(),
       packages=['pyThreadpool'],
       classifiers=[
                   'Operating System :: POSIX'
