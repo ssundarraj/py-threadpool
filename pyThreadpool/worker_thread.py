@@ -13,11 +13,11 @@ class worker_thread(threading.Thread):
         self._result_q = result_q
 
     def run(self):
-        while self._job_q.qsize():
+        while True:
             try:
                 job = self._job_q.get(None)
             except Queue.Empty:  # Exit the worker if Q empty
-                return False
+                return True
             job.execute()
             self._result_q.put(job)
             self._job_q.task_done()
