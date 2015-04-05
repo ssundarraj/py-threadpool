@@ -9,7 +9,7 @@ setup(name='pyThreadpool',
       url='http://github.com/srirams6/py-threadpool',
       author='Sriram Sundarraj',
       author_email='sriram.s.1994@gmail.com',
-      license='MIT',
+      license='GNU v3',
       packages=['pyThreadpool'],
       classifiers=[
                   'Operating System :: POSIX'
