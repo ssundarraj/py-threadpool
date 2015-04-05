@@ -13,9 +13,9 @@ setup(name='pyThreadpool',
       license=open('LICENSE').read(),
       packages=['pyThreadpool'],
       classifiers=[
-                  'Operating System :: POSIX'
-                  'Topic :: Software Development :: Libraries :: Application Frameworks'
-                  'Intended Audience :: Developers'
+                  'Operating System :: POSIX',
+                  'Topic :: Software Development :: Libraries :: Application Frameworks',
+                  'Intended Audience :: Developers',
                   'Programming Language :: Python',
                   'Programming Language :: Python :: 2',
                   'Programming Language :: Python :: 2.7',
