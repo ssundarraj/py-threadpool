@@ -60,6 +60,7 @@ Todo
 -  Putting results in ``result_q`` and handling the results
 -  Handling exceptions in the function call
 
-.. |Build Status| image:: https://travis-ci.org/srirams6/py-threadpool.svg
+.. |Build Status| image:: https://travis-ci.org/srirams6/py-threadpool.svg?branch=master
+   :target: https://travis-ci.org/srirams6/py-threadpool
 .. |Coverage Status| image:: https://coveralls.io/repos/srirams6/py-threadpool/badge.svg?branch=coverage
    :target: https://coveralls.io/r/srirams6/py-threadpool?branch=coverage
