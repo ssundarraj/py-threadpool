@@ -1,13 +1,13 @@
 import threading
-from .worker_thread import worker_thread
-from .thread_job import thread_job
+from .worker_thread import WorkerThread
+from .thread_job import ThreadJob
 try:
     import Queue
 except ImportError:
     import queue as Queue
 
 
-class threadpool(object):
+class ThreadPool(object):
 
     def __init__(self, nthreads=10):
         self.nthreads = 0
@@ -21,7 +21,7 @@ class threadpool(object):
 
     def start(self):
         for i in range(self.nthreads):
-            t = worker_thread(self._job_q, self._result_q)
+            t = WorkerThread(self._job_q, self._result_q)
             self.is_active = True
             self._threads.append(t)
             t.start()

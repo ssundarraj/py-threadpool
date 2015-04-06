@@ -5,10 +5,10 @@ except ImportError:
     import queue as Queue
 
 
-class worker_thread(threading.Thread):
+class WorkerThread(threading.Thread):
 
     def __init__(self, job_q, result_q):
-        super(worker_thread, self).__init__()
+        super(WorkerThread, self).__init__()
         self._job_q = job_q
         self._result_q = result_q
 

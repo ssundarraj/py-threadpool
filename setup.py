@@ -3,7 +3,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-setup(name='pyThreadpool',
+setup(name='ThreadPool',
       version='0.1',
       description='Threadpool library for humans.',
       long_description=open('README.rst').read(),
@@ -11,7 +11,7 @@ setup(name='pyThreadpool',
       author='Sriram Sundarraj',
       author_email='sriram.s.1994@gmail.com',
       license=open('LICENSE').read(),
-      packages=['pyThreadpool'],
+      packages=['ThreadPool'],
       classifiers=[
                   'Operating System :: POSIX',
                   'Topic :: Software Development :: Libraries :: Application Frameworks',

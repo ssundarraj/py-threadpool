@@ -1,4 +1,4 @@
-import pyThreadpool
+import ThreadPool
 
 
 def printer(x, y, testx=None, testy=None):
@@ -8,11 +8,11 @@ def printer(x, y, testx=None, testy=None):
     # print a['b']
     return True
 
-t = pyThreadpool.threadpool()
+t = ThreadPool.ThreadPool()
 for i in range(100):
     args = ('formalx', 'formaly')
     kwargs = {'testx': 'keywordx', 'testy': 'keywordy'}
-    j = pyThreadpool.thread_job(printer, args, kwargs)
+    j = ThreadPool.ThreadJob(printer, args, kwargs)
     t.add_job(j)
 t.start()
 print(t.is_active)

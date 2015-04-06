@@ -7,11 +7,11 @@ Thread pool library for Humans.
 ## Installation
 
 #### Using `pip`
-`pip install pyThreadpool` (Not supported yet)
+`pip install ThreadPool` (Not supported yet)
 
 or to get the source via pip, use
 
-`pip install -e git+https://github.com/srirams6/py-threadpool.git#egg=pyThreadpool`
+`pip install -e git+https://github.com/srirams6/py-threadpool.git#egg=ThreadPool`
 
 #### From source
 
@@ -24,20 +24,20 @@ or to get the source via pip, use
 Basic usage is shown here.
 
 ```py
-import pyThreadpool
+import ThreadPool
 
 # Function to be executed.
 def printer(x, y, testx=None, testy=None):
     print x, y, testx, testy
     print "Done"
 
-t = pyThreadpool.threadpool()
+t = ThreadPool.ThreadPool()
 
 # Adding the same function 100 times
 for i in range(100):
     args = ('formalx', 'formaly')
     kwargs = {'testx': 'keywordx', 'testy': 'keywordy'}
-    j = pyThreadpool.thread_job(printer, args, kwargs)  # Create a thread_job object.
+    j = ThreadPool.ThreadJob(printer, args, kwargs)  # Create a thread_job object.
     t.add_job(j)
 t.start()
 t.finish()
