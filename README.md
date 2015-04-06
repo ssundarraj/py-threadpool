@@ -7,7 +7,7 @@ Thread pool library for Humans.
 ## Installation
 
 #### Using `pip`
-`pip install ThreadPool` (Not supported yet)
+`pip install ThreadPool` 
 
 or to get the source via pip, use
 
