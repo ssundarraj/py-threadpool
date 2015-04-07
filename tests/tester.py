@@ -1,4 +1,4 @@
-import ThreadPool
+import SimplePool
 
 
 def printer(x, y, testx=None, testy=None):
@@ -8,11 +8,11 @@ def printer(x, y, testx=None, testy=None):
     # print a['b']
     return True
 
-t = ThreadPool.ThreadPool()
+t = SimplePool.ThreadPool()
 for i in range(100):
     args = ('formalx', 'formaly')
     kwargs = {'testx': 'keywordx', 'testy': 'keywordy'}
-    j = ThreadPool.ThreadJob(printer, args, kwargs)
+    j = SimplePool.ThreadJob(printer, args, kwargs)
     t.add_job(j)
 t.start()
 print(t.is_active)

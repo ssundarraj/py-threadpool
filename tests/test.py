@@ -1,7 +1,7 @@
-import ThreadPool
+import SimplePool
 from nose.tools import eq_, ok_
 
-t = ThreadPool.ThreadPool()
+t = SimplePool.ThreadPool()
 
 
 def printer(x, y, testx=None, testy=None):
@@ -20,7 +20,7 @@ def test_intern():
     for i in range(100):
         args = ('formalx', 'formaly')
         kwargs = {'testx': 'keywordx', 'testy': 'keywordy'}
-        j = ThreadPool.ThreadJob(printer, args, kwargs)
+        j = SimplePool.ThreadJob(printer, args, kwargs)
         t.add_job(j)
     t.start()
     print(t.is_active)

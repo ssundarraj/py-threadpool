@@ -11,11 +11,11 @@ Installation
 Using ``pip``
 ^^^^^^^^^^^^^
 
-``pip install pyThreadpool``
+``pip install SimplePool``
 
 or to get the source via pip, use
 
-``pip install -e git+https://github.com/srirams6/py-threadpool.git#egg=pyThreadpool``
+``pip install -e git+https://github.com/srirams6/py-threadpool.git#egg=SimplePool``
 
 From source
 ^^^^^^^^^^^
@@ -30,20 +30,20 @@ Basic usage is shown here.
 
 .. code:: py
 
-    import pyThreadpool
+    import SimplePool
 
     # Function to be executed.
     def printer(x, y, testx=None, testy=None):
         print x, y, testx, testy
         print "Done"
 
-    t = pyThreadpool.threadpool()
+    t = SimplePool.ThreadPool()
 
     # Adding the same function 100 times
     for i in range(100):
         args = ('formalx', 'formaly')
         kwargs = {'testx': 'keywordx', 'testy': 'keywordy'}
-        j = pyThreadpool.thread_job(printer, args, kwargs)  # Create a thread_job object.
+        j = SimplePool.ThreadJob(printer, args, kwargs)  # Create a thread_job object.
         t.add_job(j)
     t.start()
     t.finish()
