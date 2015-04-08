@@ -3,7 +3,7 @@ py-threadpool
 
 Thread pool library for Humans.
 
-|Build Status| |Coverage Status|
+|Latest Version| |Build Status| |Coverage Status|
 
 Installation
 ------------
@@ -60,6 +60,8 @@ Todo
 -  Putting results in ``result_q`` and handling the results
 -  Handling exceptions in the function call
 
+.. |Latest Version| image:: https://pypip.in/version/SimplePool/badge.svg
+   :target: https://pypi.python.org/pypi/SimplePool/
 .. |Build Status| image:: https://travis-ci.org/srirams6/py-threadpool.svg?branch=master
    :target: https://travis-ci.org/srirams6/py-threadpool
 .. |Coverage Status| image:: https://coveralls.io/repos/srirams6/py-threadpool/badge.svg?branch=coverage
