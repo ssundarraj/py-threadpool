@@ -13,7 +13,7 @@ Using ``pip``
 
 ``pip install SimplePool``
 
-or to get the source via pip, use
+or to get the latest source via pip, use
 
 ``pip install -e git+https://github.com/srirams6/py-threadpool.git#egg=SimplePool``
 
