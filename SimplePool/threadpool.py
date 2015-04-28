@@ -19,6 +19,9 @@ class ThreadPool(object):
         self.is_active = 0
         self.nthreads = nthreads
 
+    def __len__(self):
+        return len(self._threads)
+
     def start(self):
         for i in range(self.nthreads):
             t = WorkerThread(self._job_q, self._result_q)
