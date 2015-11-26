@@ -11,7 +11,7 @@ install:
 # command to run tests
 script:
   - nosetests
-  - nosetests --with-coverage --cover-package=pyThreadpool
+  - nosetests --with-coverage --cover-package=SimplePool
 after_success:
   coveralls
 notifications:
