@@ -2,8 +2,8 @@
 Thread pool library for Humans.
 
 [![Latest Version](https://pypip.in/version/SimplePool/badge.svg)](https://pypi.python.org/pypi/SimplePool/)
-[![Build Status](https://travis-ci.org/srirams6/py-threadpool.svg?branch=master)](https://travis-ci.org/ssundarraj/py-threadpool)
-[![Coverage Status](https://coveralls.io/repos/srirams6/py-threadpool/badge.svg?branch=coverage)](https://coveralls.io/r/srirams6/py-threadpool?branch=coverage)
+[![Build Status](https://travis-ci.org/ssundarraj/py-threadpool.svg?branch=master)](https://travis-ci.org/ssundarraj/py-threadpool)
+[![Coverage Status](https://coveralls.io/repos/ssundarraj/py-threadpool/badge.svg?branch=coverage)](https://coveralls.io/r/ssundarraj/py-threadpool?branch=coverage)
 
 ## Installation
 
