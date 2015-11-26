@@ -1,6 +1,4 @@
-import threading
 from .worker_thread import WorkerThread
-from .thread_job import ThreadJob
 try:
     import Queue
 except ImportError:
